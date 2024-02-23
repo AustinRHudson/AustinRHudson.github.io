@@ -1,7 +1,119 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+    <body style="background-color:rgb(10, 25, 47)">
+        <style>
+            h1{
+                text-align: right;
+                font-size: 25px;
+                margin-right: 150px
+            }
+            h2{
+                color: rgb(207, 206, 206);
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 60px;
+                margin-left: 450px
+            }
+            p{
+                font-family:'Courier New', Courier, monospace;
+                color: gray;
+                margin-left: 450px
+            }
+            button.about, button.projects, button.work, button.contact{
+                cursor: pointer;
+                color: rgb(207, 206, 206);
+                font-style: normal;
+                font-family:'Courier New', Courier, monospace;
+                margin-left: 100px;
+                font-size: 15px;
+                border: none;
+                background: none;
+            }
+            button.about:hover,button.projects:hover, button.work:hover, button.contact:hover{
+                color: rgb(80, 252, 157);
+            }
+
+            .fade {
+            
+            animation-name: fade;
+            animation-duration: 1.5s;
+            animation-name: fadeIn;
+            animation-duration: 1.5;
+          }
+
+          a:hover span {
+            text-decoration: underline;
+            color: rgb(80, 252, 157)!important;
+}
+          
+          @keyframes fade {
+            from {opacity: 1}
+            to {opacity: 0}
+          }
+
+          @keyframes fadeIn {
+            from {opacity: 0}
+            to {opacity: 1}
+          }
+        </style>
+
+        <h1>
+            <a><span><button class="about">About me</button></span></a>
+            <button class="projects">Projects</button>
+            <button class="work">Work</button>
+            <button class="contact">Contact</button>
+        </h1>
+
+        <div class = "sectionContainer fade fadeIn">
+            <p style="margin-top: 200px; color: rgb(80, 252, 157); font-size: 16px;">Hi,  my name is</p>
+            <h2>Austin Hudson.</h2>
+            <p style="color: gray; margin-right: 800px; font-size: 18px;">A software engineer student and web developer that goes to The University of Houston. I specialize in backend software engineering while also
+            having experience in frontend web development.</p>
+        </div>
+
+        <div class = "sectionContainer fade fadeIn">
+            <h2>Projects</h2>
+            <p>I do stuff.</p>
+        </div>
+
+        <div class = "sectionContainer fade fadeIn">
+            <h2>Work experience</h2>
+            <p>I have worked before.</p>
+        </div>
+
+        <div class = "sectionContainer fade fadeIn">
+            <h2>Contact me</h2>
+            <p>My email.</p>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script>
+            let currentSection = 0
+            let sections = document.getElementsByClassName("sectionContainer");
+            showSection(currentSection)
+            function showSection(section){
+                let i;
+                for(i = 0; i < sections.length; i++){
+                    if(i == section){
+                        sections[i].style.display = "block"
+                    }   
+                    else{
+                        sections[i].style.display = "none"
+                    } 
+                }
+            }
+            $(".about").on("click", function(e){
+                showSection(0)
+            });
+            $(".projects").on("click", function(e){
+                showSection(1)
+            });
+            $(".work").on("click", function(e){
+                showSection(2)
+            });
+            $(".contact").on("click", function(e){
+                showSection(3)
+            });
+        </script>
+    </body>
 </html>
