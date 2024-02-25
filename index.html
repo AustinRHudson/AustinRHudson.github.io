@@ -63,6 +63,36 @@
             li::marker{
                 color: rgb(80, 252, 157);
             }
+
+            .contact-container{
+                float: left;
+                padding-left: 23.5%;
+                display: flex;
+                justify-content: space-evenly;
+            }
+
+            .contact-form{
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                gap: 20px;
+            }
+
+            .contact-input{
+                width: 400px;
+                height: 50px;
+                outline: none;
+                background: none;
+                border-color: rgb(80, 252, 157);
+                color: rgb(207, 206, 206);
+                font-size: 20px;
+                font-family: 'Courier New', Courier, monospace;
+                border-radius: 8px;
+            }
+
+            button.submit{
+                
+            }
           
           @keyframes fade {
             from {opacity: 1}
@@ -101,7 +131,7 @@
                 <div class="workList"><li><button class="greatwood"><div class="workButtons">Greatwood Automotive</div></button></li></div>
             </ul>
 
-            <div class="experience fade fadeIn" style="float: right; padding-right: 30%;">
+            <div class="experience fade fadeIn" style="float: left;">
                 <h2 style="font-size: 30px; color: rgb(141, 140, 140);">Software Engineer Teacher at Code Ninjas</h2>
                 <p>June - December 2020</p>
                 <ul>
@@ -112,7 +142,7 @@
                 </ul>
             </div>
 
-            <div class="experience fade fadeIn" style="float: right; padding-right: 30%;">
+            <div class="experience fade fadeIn" style="float: left;">
                 <h2 style="font-size: 30px; color: rgb(141, 140, 140);">Software Engineer Teacher at Code Ninjas</h2>
                 <p>June - December 2021</p>
                 <ul>
@@ -126,7 +156,15 @@
 
         <div class = "sectionContainer fade fadeIn">
             <h2>Contact me</h2>
-            <p>My email.</p>
+            <p>Contact me to hire me or if you just want to send me a message.</p>
+            <div class="contact-container">
+            <form action="" class="contact-form">
+                <input type="text" name="name" placeholder="Your name" class="contact-input" required></input>
+                <input type="email" name="email" placeholder="Your email" class="contact-input" required></input>
+                <textarea name="message" placeholder="Your message..." class="contact-input" required style="height: 200px;"></textarea>
+                <button class="submit" style="border: 3px;"> Submit </button>
+            </form>
+            </div>
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
