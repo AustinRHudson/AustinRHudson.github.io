@@ -8,20 +8,20 @@
             h1{
                 text-align: right;
                 font-size: 25px;
-                margin-right: 150px
+                margin-right: 150px;
             }
             h2{
                 color: rgb(207, 206, 206);
                 font-family: Arial, Helvetica, sans-serif;
                 font-size: 60px;
-                margin-left: 450px
+                padding-left: 23.5%;
             }
             p{
                 font-family:'Courier New', Courier, monospace;
                 color: gray;
-                margin-left: 450px
+                padding-left: 23.5%;
             }
-            button.about, button.projects, button.work, button.contact{
+            button{
                 cursor: pointer;
                 color: rgb(207, 206, 206);
                 font-style: normal;
@@ -31,7 +31,11 @@
                 border: none;
                 background: none;
             }
-            button.about:hover,button.projects:hover, button.work:hover, button.contact:hover{
+            button.codeNinja, button.greatwood{
+                margin-left: 0px;
+                font-size: 20px;
+            }
+            button:hover{
                 color: rgb(80, 252, 157);
             }
 
@@ -40,13 +44,25 @@
             animation-name: fade;
             animation-duration: 1.5s;
             animation-name: fadeIn;
-            animation-duration: 1.5;
+            animation-duration: .5s;
           }
 
-          a:hover span {
+            a:hover span {
             text-decoration: underline;
             color: rgb(80, 252, 157)!important;
-}
+            }
+
+            ul{
+                max-width: 540px; 
+                padding-left: 25%; 
+                color: gray; 
+                list-style-type:disc;
+                font-family:'Courier New', Courier, monospace;
+            }
+
+            li::marker{
+                color: rgb(80, 252, 157);
+            }
           
           @keyframes fade {
             from {opacity: 1}
@@ -60,7 +76,7 @@
         </style>
 
         <h1>
-            <a><span><button class="about">About me</button></span></a>
+            <button class="about">About me</button>
             <button class="projects">Projects</button>
             <button class="work">Work</button>
             <button class="contact">Contact</button>
@@ -68,8 +84,8 @@
 
         <div class = "sectionContainer fade fadeIn">
             <p style="margin-top: 200px; color: rgb(80, 252, 157); font-size: 16px;">Hi,  my name is</p>
-            <h2>Austin Hudson.</h2>
-            <p style="color: gray; margin-right: 800px; font-size: 18px;">A software engineer student and web developer that goes to The University of Houston. I specialize in backend software engineering while also
+            <h2 style="max-width: 540px;">Austin Hudson.</h2>
+            <p style="color: gray; max-width: 540px; font-size: 18px;">A software engineer student and web developer that goes to The University of Houston. I specialize in backend software engineering while also
             having experience in frontend web development.</p>
         </div>
 
@@ -80,7 +96,32 @@
 
         <div class = "sectionContainer fade fadeIn">
             <h2>Work experience</h2>
-            <p>I have worked before.</p>
+            <ul style="float: left; font-size: 20px;">
+                <div class="workList"><li><button class="codeNinja"><div class="workButtons">Code Ninjas</div></button></li></div>
+                <div class="workList"><li><button class="greatwood"><div class="workButtons">Greatwood Automotive</div></button></li></div>
+            </ul>
+
+            <div class="experience fade fadeIn" style="float: right; padding-right: 30%;">
+                <h2 style="font-size: 30px; color: rgb(141, 140, 140);">Software Engineer Teacher at Code Ninjas</h2>
+                <p>June - December 2020</p>
+                <ul>
+                    <li>Worked with children and teens explaining how software engineering works and how computers in general work.</li>
+                    <li>Solved technical issues with each computer daily to fix any problem caused by the students.</li>
+                    <li>Became good at explaining high level topics related to computers to people with little to no experience in the field or with technology.</li>
+                    <li>Managed over 15 kids a day to keep them on task.</li>
+                </ul>
+            </div>
+
+            <div class="experience fade fadeIn" style="float: right; padding-right: 30%;">
+                <h2 style="font-size: 30px; color: rgb(141, 140, 140);">Software Engineer Teacher at Code Ninjas</h2>
+                <p>June - December 2021</p>
+                <ul>
+                    <li>Worked with children and teens explaining how software engineering works and how computers in general work.</li>
+                    <li>Solved technical issues with each computer daily to fix any problem caused by the students.</li>
+                    <li>Became good at explaining high level topics related to computers to people with little to no experience in the field or with technology.</li>
+                    <li>Managed over 15 kids a day to keep them on task.</li>
+                </ul>
+            </div>
         </div>
 
         <div class = "sectionContainer fade fadeIn">
@@ -93,7 +134,13 @@
         <script>
             let currentSection = 0
             let sections = document.getElementsByClassName("sectionContainer");
+            let job = 0
+            let jobs = document.getElementsByClassName("experience");
+            let workList = document.getElementsByClassName("workList");
+            let workButtonList = document.getElementsByClassName("workButtons")
             showSection(currentSection)
+            showWork(job)
+
             function showSection(section){
                 let i;
                 for(i = 0; i < sections.length; i++){
@@ -105,6 +152,7 @@
                     } 
                 }
             }
+
             $(".about").on("click", function(e){
                 showSection(0)
             });
@@ -116,6 +164,32 @@
             });
             $(".contact").on("click", function(e){
                 showSection(3)
+            });
+
+
+
+            function showWork(job){
+                let i;
+                for(i = 0; i < jobs.length; i++){
+                    console.log(workButtonList[i])
+                    if(i == job){
+                        jobs[i].style.display = "block";
+                        workList[i].style.listStyleType = "disc";
+                        workButtonList[i].style.color = "#50FC9D";
+                    }   
+                    else{
+                        jobs[i].style.display = "none"
+                        workList[i].style.listStyleType = "circle";
+                        workButtonList[i].style.color = "#CFCECE";
+                    } 
+                }
+            }
+
+            $(".codeNinja").on("click", function(e){
+                showWork(0)
+            });
+            $(".greatwood").on("click", function(e){
+                showWork(1)
             });
         </script>
     </body>
