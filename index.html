@@ -83,6 +83,7 @@
                 height: 50px;
                 outline: none;
                 background: none;
+                background-color: rgb(10, 25, 47);
                 border-color: rgb(80, 252, 157);
                 color: rgb(207, 206, 206);
                 font-size: 20px;
@@ -91,7 +92,8 @@
             }
 
             button.submit{
-                
+                font-size: 30px;
+                padding-left: 10.5%;
             }
           
           @keyframes fade {
@@ -121,6 +123,9 @@
 
         <div class = "sectionContainer fade fadeIn">
             <h2>Projects</h2>
+            <div class="projects">
+
+            </div>
             <p>I do stuff.</p>
         </div>
 
@@ -156,9 +161,10 @@
 
         <div class = "sectionContainer fade fadeIn">
             <h2>Contact me</h2>
-            <p>Contact me to hire me or if you just want to send me a message.</p>
+            <p style="max-width: 400px;">If you have an idea for a project, want to hire me, or just want to send me a message, feel free to contact me.</p>
             <div class="contact-container">
-            <form action="" class="contact-form">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                <input type="hidden" name="access_key" value="40d8a7f3-566f-42ea-8971-5fe0233dcbf7">
                 <input type="text" name="name" placeholder="Your name" class="contact-input" required></input>
                 <input type="email" name="email" placeholder="Your email" class="contact-input" required></input>
                 <textarea name="message" placeholder="Your message..." class="contact-input" required style="height: 200px;"></textarea>
