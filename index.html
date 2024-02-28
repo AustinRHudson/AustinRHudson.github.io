@@ -95,6 +95,56 @@
                 font-size: 30px;
                 padding-left: 10.5%;
             }
+
+            .linkList{
+                width: 50px;
+                height: 100px;
+                float: left;
+                padding-left: 3%;
+                padding-top: 600px;
+                position: fixed;
+            }
+
+            .socialList{
+                list-style-type: none;
+            }
+
+            h4{
+                content: "";
+                display: block;
+                width: 1px;
+                height: 130px;
+                margin: 0px auto;
+                background-color: gray;
+            }
+
+            .left-margins{
+                position: relative;
+                float: left;
+                padding-left: 23.5%;
+                height: 300px
+            }
+
+            .left-project{
+                position: relative;
+                font-family: 'Courier New', Courier, monospace;
+                float: left;
+                max-width: 400px;
+                font-size: 20px;
+                color: rgb(165,177,206);
+                background-color: rgb(17,35,63);
+                border-radius: 3px;
+            }
+            .right-project{
+                position: relative;
+                float:left;
+                background-color: rgb(17,35,63);
+                width: 300px;
+            }
+
+            .project-holder{
+
+            }
           
           @keyframes fade {
             from {opacity: 1}
@@ -108,11 +158,19 @@
         </style>
 
         <h1>
-            <button class="about">About me</button>
-            <button class="projects">Projects</button>
-            <button class="work">Work</button>
-            <button class="contact">Contact</button>
+            <button class="about topicButtons">About me</button>
+            <button class="projects topicButtons">Projects</button>
+            <button class="work topicButtons">Work</button>
+            <button class="contact topicButtons">Contact</button>
         </h1>
+
+        <div orientation="left" class="linkList">
+            <ul class="socialList">
+                <li><a href="https://github.com/austinrhudson" aria-label="GitHub" target="_blank" rel="noreferrer"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></li>
+                <li><a href="https://www.linkedin.com/in/austin-hudson-312269111/" aria-label="Linkedin" target="_blank" rel="noreferrer"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><title>LinkedIn</title><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></li>
+                <h4></h4>
+            </ul>
+        </div>
 
         <div class = "sectionContainer fade fadeIn">
             <p style="margin-top: 200px; color: rgb(80, 252, 157); font-size: 16px;">Hi,  my name is</p>
@@ -123,10 +181,34 @@
 
         <div class = "sectionContainer fade fadeIn">
             <h2>Projects</h2>
-            <div class="projects">
-
+            <div class="projects-page">
+                <span class="project">
+                    <h2 style="font-size: 30px; color: rgb(207, 206, 206);">Extended Spotify Data Visualizer</h2>
+                    <span class="left-margins"></span>
+                    <div class="project-holder">
+                    <span class="left-project">A Python project that uses the extended data provided to the user by the popular music app Spotify to generate readable information
+                        from their music streaming history to show them their top artists, how many hours they've listened to them, etc. while using an interactive UI.
+                    </span>
+                    <span class="right-project"><a href="https://github.com/AustinRHudson/SpotifiyDataVisualizer" target="_blank"><img width="440px" src="SpotifyDataWebsitePicture.PNG"></a></span>
+                    </div>
+                </span>
+                <span class="project">
+                    <h2 style="font-size: 30px; color: rgb(207, 206, 206); padding-top: 15%;">Video Game Mod</h2>
+                    <span class="left-margins"></span>
+                    <span class="left-project">A C# mod made for a popular video game that changes core mechanics of the game by interacting with the methods of the game itself. The mod
+                        has been downloaded by over 8500 users and is depended on by over 20 other mods.
+                    </span>
+                    <span class="right-project"><a href="https://thunderstore.io/c/lethal-company/p/Guyonetwo/UnlimitedOxygen/" target="_blank"><img width="340px" src="modWebsite.PNG"></a></span>
+                </span>
+                <span class="project">
+                    <h2 style="font-size: 30px; color: rgb(207, 206, 206); padding-top: 15%;">Video Game</h2>
+                    <span class="left-margins"></span>
+                    <span class="left-project">A platforming video game made in C# by myself and a group of colleagues. The game is fully functioning, has well designed art/UI, and uses
+                        smart solutions to achieve interesting effects and dynamics in the game.
+                    </span>
+                    <span class="right-project"><a href="https://github.com/AustinRHudson/Platformer" target="_blank"><img width="440px" src="gameWebsite.png"></a></span>
+                </span>
             </div>
-            <p>I do stuff.</p>
         </div>
 
         <div class = "sectionContainer fade fadeIn">
@@ -165,8 +247,8 @@
             <div class="contact-container">
             <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
                 <input type="hidden" name="access_key" value="40d8a7f3-566f-42ea-8971-5fe0233dcbf7">
-                <input type="text" name="name" placeholder="Your name" class="contact-input" required></input>
-                <input type="email" name="email" placeholder="Your email" class="contact-input" required></input>
+                <input type="text" name="name" placeholder="Your name" class="contact-input" required autocomplete="name"></input>
+                <input type="email" name="email" placeholder="Your email" class="contact-input" required autocomplete="email"></input>
                 <textarea name="message" placeholder="Your message..." class="contact-input" required style="height: 200px;"></textarea>
                 <button class="submit" style="border: 3px;"> Submit </button>
             </form>
@@ -181,18 +263,23 @@
             let job = 0
             let jobs = document.getElementsByClassName("experience");
             let workList = document.getElementsByClassName("workList");
-            let workButtonList = document.getElementsByClassName("workButtons")
-            showSection(currentSection)
-            showWork(job)
+            let workButtonList = document.getElementsByClassName("workButtons");
+            let topicButtons = document.getElementsByClassName("topicButtons");
+            showSection(currentSection);
+            showWork(job);
 
             function showSection(section){
                 let i;
+                
                 for(i = 0; i < sections.length; i++){
+                    console.log(topicButtons[i])
                     if(i == section){
                         sections[i].style.display = "block"
+                        topicButtons[i].style.color = "#50FC9D";
                     }   
                     else{
                         sections[i].style.display = "none"
+                        topicButtons[i].style.color = "#CFCECE";
                     } 
                 }
             }
@@ -215,7 +302,6 @@
             function showWork(job){
                 let i;
                 for(i = 0; i < jobs.length; i++){
-                    console.log(workButtonList[i])
                     if(i == job){
                         jobs[i].style.display = "block";
                         workList[i].style.listStyleType = "disc";
